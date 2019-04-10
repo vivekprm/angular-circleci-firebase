@@ -17,13 +17,67 @@
   <li>
     Enable git integration in our project by following below steps:
     <ul>
-      <li>$cd your-project-folder</li>
-      <li>$git init</li>
-      <li>$git add .</li>
-      <li>$git commit -m "first commit"</li>
-      <li>$git remote add origin "repository URL generated above after creating repository."</li>
-      <li>$git push -u origin master</li>
+      <li><code>$cd your-project-folder</code></li>
+      <li><code>$git init</code></li>
+      <li><code>$git add .</code></li>
+      <li><code>$git commit -m "first commit"</code></li>
+      <li><code>$git remote add origin "repository URL generated above after creating repository."</code></li>
+      <li><code>$git push -u origin master</code></li>
     </ul>
+  </li><br/>
+  <li>Deploy to Firebase:
+    <ul>
+      <li>
+        First you need to create a project in Google Firebase, go to <a href="https://console.firebase.google.com/" target="_blank">Google Firebase console</a> and setup the project.
+      </li>
+      <li>
+          <h3>Install Firebase Tools</h3><br/>
+          <p>Install Firebase tools globally using below command:</p>
+          <code>$ sudo npm install -g firebase-tools</code>
+      </li>
+      <li>
+          <h3>Configure Firebase</h3>
+          <p>
+            Now login Firebase with your Google account using below command.
+            This command will redirect to Google account login page.
+          </p>
+          <code>$ firebase login</code>
+      </li>
+      <li>
+          <h3>Initialize Firebase</h3>
+          <p>Go to your angular2 project folder and execute following command.</p>
+          <code>$ firebase init</code>
+          <p>
+            For below question give directory name as dist.<br/>
+            What do you want to use as your public directory? dist
+          </p>
+      </li>
+      <li>
+          <h3>Production Build</h3><br/>
+          <p>
+            in angular.json
+            Go to your project and modify the outputPath value to dist.<br/>
+            "outputPath": "dist/your-project-name"<br/>
+            to<br />
+            "outputPath": "dist",<br/>
+            Use below command to build the final build, this will generate dist folder with all required packages.
+            <code>$ ng build --prod</code>
+          </p>
+      </li>
+      <li>
+          <h3>Firebase Push</h3>
+          <code>$ firebase deploy</code>
+          <p>
+              Wait for deploy complete message.<br/>
+              Will get the below URLs in the end:<br/>
+              Project Console: https://console.firebase.google.com/project/angular-circleci-firebase/overview
+              Hosting URL: https://angular-circleci-firebase.firebaseapp.com
+          </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2>Configure CircleCi</h2>
   </li>
 </ul>
 

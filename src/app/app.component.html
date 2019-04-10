@@ -4,39 +4,41 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<h2>Follow below steps for integration: </h2>
+<h3>Follow below steps for integration</h3>
 <ul>
   <li>
-    Create an angular app using angular cli:<br/>
+    <h4>Create an angular app using angular-cli</h4><br/>
     <b>$ng new angular-circleci-firebase</b>
   </li><br/>
   <li>
-      Create a New Repository:<br/>
-      Login into your GitHub account and go to your repositories and create new.
+    <h3>GIT setup</h3>
+    <p>
+        Create a New Repository:<br/>
+        Login into your GitHub account and go to your repositories and create new.
+    </p><br/>
+    <p>
+        Enable git integration in our project by following below steps:
+        <code>$cd your-project-folder</code>
+        <code>$git init</code>
+        <code>$git add .</code>
+        <code>$git commit -m "first commit"</code>
+        <code>$git remote add origin "repository URL generated above after creating repository."</code>
+        <code>$git push -u origin master</code>
+    </p>
   </li><br/>
   <li>
-    Enable git integration in our project by following below steps:
-    <ul>
-      <li><code>$cd your-project-folder</code></li>
-      <li><code>$git init</code></li>
-      <li><code>$git add .</code></li>
-      <li><code>$git commit -m "first commit"</code></li>
-      <li><code>$git remote add origin "repository URL generated above after creating repository."</code></li>
-      <li><code>$git push -u origin master</code></li>
-    </ul>
-  </li><br/>
-  <li>Deploy to Firebase:
+    <h3>Deploy to Firebase</h3>
     <ul>
       <li>
         First you need to create a project in Google Firebase, go to <a href="https://console.firebase.google.com/" target="_blank">Google Firebase console</a> and setup the project.
       </li>
       <li>
-          <h3>Install Firebase Tools</h3><br/>
+          <h4>Install Firebase Tools</h4>
           <p>Install Firebase tools globally using below command:</p>
           <code>$ sudo npm install -g firebase-tools</code>
       </li>
       <li>
-          <h3>Configure Firebase</h3>
+          <h4>Configure Firebase</h4>
           <p>
             Now login Firebase with your Google account using below command.
             This command will redirect to Google account login page.
@@ -44,7 +46,7 @@
           <code>$ firebase login</code>
       </li>
       <li>
-          <h3>Initialize Firebase</h3>
+          <h4>Initialize Firebase</h4>
           <p>Go to your angular2 project folder and execute following command.</p>
           <code>$ firebase init</code>
           <p>
@@ -53,7 +55,7 @@
           </p>
       </li>
       <li>
-          <h3>Production Build</h3><br/>
+          <h4>Production Build</h4>
           <p>
             in angular.json
             Go to your project and modify the outputPath value to dist.<br/>
@@ -65,7 +67,7 @@
           </p>
       </li>
       <li>
-          <h3>Firebase Push</h3>
+          <h4>Firebase Push</h4>
           <code>$ firebase deploy</code>
           <p>
               Wait for deploy complete message.<br/>
@@ -77,7 +79,7 @@
     </ul>
   </li>
   <li>
-    <h2>Configure CircleCi</h2>
+    <h3>Configure CircleCi</h3>
   </li>
 </ul>
 
